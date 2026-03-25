@@ -119,7 +119,7 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 <p align="center">
   <img src="assets/videos/Eventstream.gif" width="400">
   <br>
-  <em>Fig4: An example of event frames data (Audio induced vibrating object) </em>
+  <em>Fig4: An example of raw event data (Audio induced vibrating object) </em>
 </p>
 
 ### Event frames after pre-processing
@@ -128,7 +128,7 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 <p align="center">
   <img src="assets/videos/Eventframes.gif" width="360">
   <br>
-  <em>Fig4: An example of event frames data (Audio induced vibrating object) </em>
+  <em>Fig5: An example of event frames data (Audio induced vibrating object) </em>
 </p>
 
 <!-- 方法2: 使用 GitHub 原生视频支持（推荐用于较长视频） -->
