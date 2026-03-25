@@ -41,7 +41,7 @@ Visual microphones are designed to recover audio information from visual data ac
 | CMGAN        | 3.14 | 0.961 | 17.8 | 6.2  |
 | **SpecEnhance (Ours)** | **3.52** | **0.974** | **19.6** | **4.1** |
 
-### 频谱对比可视化
+### Comparison of the Spectrograms
 
 <table>
   <tr>
@@ -63,7 +63,7 @@ Visual microphones are designed to recover audio information from visual data ac
 
 <p align="center"><em>图2: 语音增强前后的频谱图与波形对比 (sample_001, SNR=5dB)</em></p>
 
-### 波形细节对比
+### Comparison of the Waveforms
 
 <p align="center">
   <img src="assets/images/waveform_comparison_detail.png" width="90%">
@@ -73,11 +73,11 @@ Visual microphones are designed to recover audio information from visual data ac
 
 ---
 
-## 🎧 音频示例
+## 🎧 Audio Samples
 
-我们提供了多组音频样本供试听对比。更多样本请访问我们的 [Demo 页面](https://your-username.github.io/your-repo-name/)。
+We provide more audio samples in [Demo 页面](https://your-username.github.io/your-repo-name/)。
 
-### 样本 1: 女性说话人 (SNR=5dB)
+### Sample 1: Female Speaker
 
 | 类型 | 音频 |
 |:-----|:-----|
@@ -86,7 +86,7 @@ Visual microphones are designed to recover audio information from visual data ac
 | **SpecEnhance** | [▶️ 播放](assets/audio/sample_001_enhanced.wav) |
 | 干净参考 | [▶️ 播放](assets/audio/sample_001_clean.wav) |
 
-### 样本 2: 男性说话人 (SNR=0dB)
+### Sample 2: Male Speaker
 
 | 类型 | 音频 |
 |:-----|:-----|
@@ -95,13 +95,11 @@ Visual microphones are designed to recover audio information from visual data ac
 | **SpecEnhance** | [▶️ 播放](assets/audio/sample_002_enhanced.wav) |
 | 干净参考 | [▶️ 播放](assets/audio/sample_002_clean.wav) |
 
-> ⚠️ **注意**: GitHub 不支持直接播放 `.wav` 文件。请克隆仓库后本地播放，或访问我们的 [在线 Demo 页面](https://your-username.github.io/your-repo-name/) 试听。
+> ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [在线 Demo 页面](https://your-username.github.io/your-repo-name/).
 
 ---
 
-## 🎬 演示视频
-
-### 实时处理演示
+## 🎬 Vibration Recording Sample
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=your_video_id">
@@ -231,16 +229,4 @@ python scripts/visualize.py \
   booktitle = {Proceedings of ACM Multimedia},
   year      = {2026}
 }
-```
 
----
-
-## 🙏 致谢
-
-本研究受到国家自然科学基金（No. XXXXXXXX）资助。感谢 [DCCRN](https://github.com/xxx) 和 [CMGAN](https://github.com/xxx) 作者开源的代码。
-
----
-
-## 📄 许可证
-
-本项目采用 [MIT 许可证](LICENSE)。
