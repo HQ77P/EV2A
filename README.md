@@ -17,7 +17,7 @@ Visual microphones are designed to recover audio information from visual data ac
 <p align="center">
   <img src="assets/images/WORKFLOW.png" width="85%" alt="workflow">
   <br>
-  <em>图1: SpecEnhance Workflow of the Proposed Method</em>
+  <em>Fig1: Workflow of the Proposed Event Vibration to Audio (EV2A) Method</em>
 </p>
 
 ---
