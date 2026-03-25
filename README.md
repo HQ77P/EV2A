@@ -87,9 +87,9 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 
 | Method | Audio |
 |:-----|:-----|
-| Ground Truth | [▶️ play](assets/audio/sample_001_noisy.wav) |
-| **EV2A (ours)** | [▶️ play](assets/audio/sample_001_enhanced.wav) |
-| VM | [▶️ play](assets/audio/sample_001_clean.wav) |
+| Ground Truth | [▶️ play](assets/audio/p234_196_mic1.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/p234_196_mic1_EV2A_2.wav) |
+| VM | [▶️ play](assets/audio/p234_196_mic1_VM.wav) |
 
 ### Sample 2: Male Speaker
 
