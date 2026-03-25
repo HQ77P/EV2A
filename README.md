@@ -139,24 +139,24 @@ https://github.com/user-attachments/assets/your-video-hash-here
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quik Start
 
-### 环境配置
+### Environment configuration
 
 ```bash
-# 克隆仓库
+# github clone
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
-# 创建虚拟环境
+# create environment
 conda create -n specenhance python=3.9 -y
 conda activate specenhance
 
-# 安装依赖
+# install requirements
 pip install -r requirements.txt
 ```
 
-### 推理示例
+### inference
 
 ```python
 import torch
@@ -178,7 +178,7 @@ torchaudio.save("examples/enhanced_output.wav", enhanced_audio.squeeze(0), sr)
 print(f"增强完成！PESQ: {calculate_pesq(enhanced_audio, clean_audio):.2f}")
 ```
 
-### 训练模型
+### training
 
 ```bash
 # 单卡训练
@@ -201,7 +201,7 @@ python scripts/visualize.py \
 
 ---
 
-## 📁 项目结构
+## 📁 project structure
 
 ```
 ├── assets/
@@ -231,9 +231,9 @@ python scripts/visualize.py \
 
 ---
 
-## 📝 引用
+## 📝 Citation
 
-如果本工作对您的研究有所帮助，请引用：
+If this work is helpful to your research, please cite:
 
 ```bibtex
 @inproceedings{zhang2026specenhance,
