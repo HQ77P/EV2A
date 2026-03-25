@@ -45,12 +45,12 @@ Visual microphones are designed to recover audio information from visual data ac
 
 <table>
   <tr>
-    <td align="center"><b>含噪输入</b></td>
-    <td align="center"><b>SpecEnhance 输出</b></td>
+    <td align="center"><b>Ground Truth Spectrograms</b></td>
+    <td align="center"><b>Recovered Speech From Vibration</b></td>
     <td align="center"><b>干净参考</b></td>
   </tr>
   <tr>
-    <td><img src="assets/images/spectrogram_noisy.png" width="280"></td>
+    <td><img src="assets/images/p234_196_mic1_GT_spec.png" width="280"></td>
     <td><img src="assets/images/spectrogram_enhanced.png" width="280"></td>
     <td><img src="assets/images/spectrogram_clean.png" width="280"></td>
   </tr>
