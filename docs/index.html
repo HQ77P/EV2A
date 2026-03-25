@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV2A - Audio Demo</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-2: #334155;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.25);
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #475569;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p { color: var(--text-muted); font-size: 1.05rem; }
+
+        .links { margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .links a {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.5rem 1rem; border-radius: 8px;
+            background: var(--surface); border: 1px solid var(--border);
+            color: var(--text); text-decoration: none; font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .links a:hover { background: var(--surface-2); border-color: var(--accent); }
+
+        /* ----- Sample Card ----- */
+        .sample-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sample-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .sample-header h3 { font-size: 1.15rem; }
+
+        .tag {
+            display: inline-block; padding: 0.2rem 0.7rem; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 600;
+        }
+        .tag-snr { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
+        .tag-gender { background: rgba(59, 130, 246, 0.15); color: var(--accent); }
+
+        /* ----- Spectrogram row ----- */
+        .spec-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .spec-item { text-align: center; }
+        .spec-item img {
+            width: 100%; border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .spec-item .caption {
+            font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem;
+        }
+
+        /* ----- Audio row ----- */
+        .audio-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .audio-item {
+            background: var(--surface-2); border-radius: 8px; padding: 1rem;
+            text-align: center;
+        }
+        .audio-item .label {
+            font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;
+        }
+        .audio-item .label.ours { color: var(--success); }
+        .audio-item audio { width: 100%; height: 40px; }
+
+        /* ----- Video section ----- */
+        .video-section { margin: 3rem 0; }
+        .video-section h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+        .video-wrapper {
+            position: relative; width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            border-radius: 12px; overflow: hidden;
+            background: #000;
+        }
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        footer {
+            text-align: center; padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .spec-row { grid-template-columns: 1fr; }
+            .audio-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ====== Header ====== -->
+    <header>
+        <h1>SpecEnhance</h1>
+        <p>Joint Time-Frequency Modeling for Speech Enhancement</p>
+        <div class="links">
+            <a href="https://arxiv.org/abs/2026.xxxxx">📄 Paper</a>
+            <a href="https://github.com/your-username/your-repo-name">💻 Code</a>
+            <a href="https://huggingface.co/your-username/specenhance">🤗 Model</a>
+        </div>
+    </header>
+
+    <!-- ====== Sample 1 ====== -->
+    <div class="sample-card">
+        <div class="sample-header">
+            <h3>Sample 1</h3>
+            <div>
+                <span class="tag tag-gender">Female</span>
+            </div>
+        </div>
+
+        <!-- Spectrogram Comparison -->
+        <div class="spec-row">
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_noisy.png" alt="Ground Truth spectrogram">
+                <div class="caption">Noisy Input</div>
+            </div>
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_enhanced.png" alt="Recoverd spectrogram (EV2A)">
+                <div class="caption">SpecEnhance (Ours)</div>
+            </div>
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_clean.png" alt="Clean spectrogram">
+                <div class="caption">Clean Reference</div>
+            </div>
+        </div>
+
+        <!-- Audio Player -->
+        <div class="audio-row">
+            <div class="audio-item">
+                <div class="label">Ground Truth</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/p234_196_mic1.wav" type="audio/wav">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <div class="label">EV2A (ours)</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/p234_196_mic1_EV2A_2.wav" type="audio/wav">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <div class="label ours">VM</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/p234_196_mic1_VM.wav" type="audio/wav">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Sample 2 ====== -->
+    <div class="sample-card">
+        <div class="sample-header">
+            <h3>Sample 2</h3>
+            <div>
+                <span class="tag tag-gender">Male</span>
+                <span class="tag tag-snr">SNR 0 dB</span>
+            </div>
+        </div>
+
+        <div class="spec-row">
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_noisy_002.png" alt="Noisy">
+                <div class="caption">Noisy Input</div>
+            </div>
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_enhanced_002.png" alt="Enhanced">
+                <div class="caption">SpecEnhance (Ours)</div>
+            </div>
+            <div class="spec-item">
+                <img src="../assets/images/spectrogram_clean_002.png" alt="Clean">
+                <div class="caption">Clean Reference</div>
+            </div>
+        </div>
+
+        <div class="audio-row">
+            <div class="audio-item">
+                <div class="label">Noisy</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/sample_002_noisy.wav" type="audio/wav">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <div class="label">DCCRN</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/sample_002_dccrn.wav" type="audio/wav">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <div class="label ours">Ours</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/sample_002_enhanced.wav" type="audio/wav">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <div class="label">Clean</div>
+                <audio controls preload="none">
+                    <source src="../assets/audio/sample_002_clean.wav" type="audio/wav">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Video ====== -->
+    <div class="video-section">
+        <h2>🎬 Demo Video</h2>
+        <!-- 方式A: 嵌入 YouTube -->
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/your_video_id"
+                title="Demo Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- 方式B: 自托管视频（取消注释即可使用）
+        <div class="video-wrapper">
+            <video controls preload="metadata" poster="../assets/images/video_thumbnail.png">
+                <source src="../assets/videos/demo.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+        -->
+    </div>
+
+    <footer>
+        SpecEnhance &copy; 2026 &middot;
+        <a href="https://github.com/your-username/your-repo-name" style="color:var(--accent);">GitHub</a>
+    </footer>
+
+</div>
+</body>
+</html>
