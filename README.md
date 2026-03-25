@@ -24,9 +24,9 @@ Visual microphones are designed to recover audio information from visual data ac
 
 ## 🎯 Contributions
 
-1. 
-2. 
-3. 
+1. The first data-adaptive learning method for the task of speech recovery, building a direct mapping from visual vibration to high-resolution speech in an end-to-end training manner, is proposed here.
+2. The designed ROI selection enables a further reduction in computation and memory, demonstrating that vibration information recorded in a $8\times8$ area is sufficient for speech recovery.
+3. Comprehensive evaluations across objective metrics, STT downstream task, robustness analysis under diverse sensor conditions, and the vibrating-object experiment demonstrate the improved performance of the proposed method in terms of speech quality, content accuracy and generalization ability.
 
 ---
 
