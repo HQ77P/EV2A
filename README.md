@@ -113,13 +113,13 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
   <em>点击图片跳转至 YouTube 观看完整演示</em>
 </p>
 
-### 动态频谱分析
+### Event frames after pre-processing
 
 <!-- 方法1: 使用 GIF 动图（推荐用于短片段） -->
 <p align="center">
-  <img src="assets/videos/spectrogram_animation.gif" width="600">
+  <img src="assets/videos/Eventframes.gif" width="600">
   <br>
-  <em>图4: 实时频谱增强过程动画 (GIF)</em>
+  <em>Fig4: An example of event frames data (Audio induced vibrating object) </em>
 </p>
 
 <!-- 方法2: 使用 GitHub 原生视频支持（推荐用于较长视频） -->
