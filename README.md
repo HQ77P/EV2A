@@ -81,27 +81,25 @@ Visual microphones are designed to recover audio information from visual data ac
 
 ## 🎧 Audio Samples
 
-We provide more audio samples in [Demo 页面](https://your-username.github.io/your-repo-name/)。
+We provide more audio samples in [Demo webpage](https://your-username.github.io/your-repo-name/)。
 
 ### Sample 1: Female Speaker
 
-| 类型 | 音频 |
+| Method | Audio |
 |:-----|:-----|
-| 含噪输入 | [▶️ 播放](assets/audio/sample_001_noisy.wav) |
-| DCCRN | [▶️ 播放](assets/audio/sample_001_dccrn.wav) |
-| **SpecEnhance** | [▶️ 播放](assets/audio/sample_001_enhanced.wav) |
-| 干净参考 | [▶️ 播放](assets/audio/sample_001_clean.wav) |
+| Ground Truth | [▶️ play](assets/audio/sample_001_noisy.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/sample_001_enhanced.wav) |
+| VM | [▶️ play](assets/audio/sample_001_clean.wav) |
 
 ### Sample 2: Male Speaker
 
-| 类型 | 音频 |
+| Method | Audio |
 |:-----|:-----|
-| 含噪输入 | [▶️ 播放](assets/audio/sample_002_noisy.wav) |
-| DCCRN | [▶️ 播放](assets/audio/sample_002_dccrn.wav) |
-| **SpecEnhance** | [▶️ 播放](assets/audio/sample_002_enhanced.wav) |
-| 干净参考 | [▶️ 播放](assets/audio/sample_002_clean.wav) |
+| Ground Truth | [▶️ play](assets/audio/sample_002_noisy.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/sample_002_enhanced.wav) |
+| VM | [▶️ play](assets/audio/sample_002_clean.wav) |
 
-> ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [在线 Demo 页面](https://your-username.github.io/your-repo-name/).
+> ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [ Demo webpage](https://your-username.github.io/your-repo-name/).
 
 ---
 
