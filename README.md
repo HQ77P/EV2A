@@ -34,7 +34,7 @@ Visual microphones are designed to recover audio information from visual data ac
 
 ### Evaluation Metrics
 
-| Method | PESQ ↑ | STOI ↑ | LSD ⬇ | WER ⬇ | CER ⬇ |
+| Method | PESQ ⬆ | STOI ⬆ | LSD ⬇ | WER ⬇ | CER ⬇ |
 |:-----|:------:|:------:|:------:|:------:|:------:|
 | VM | 1.21 | 0.55 | 3.67  | 0.83  | 0.52  |
 | EBVM | 1.20 | 0.40 | 5.60 | 0.98  | 0.85  |
