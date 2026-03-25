@@ -64,7 +64,7 @@ Visual microphones are designed to recover audio information from visual data ac
 <p align="center">
   <img src="assets/images/waveform_comparison_detail.png" width="90%">
   <br>
-  <em>图3: 不同方法在高噪声段的波形细节对比</em>
+  <em>Fig3: Comparison between ground truth and recovered speech from event vibration recordings</em>
 </p>
 
 ---
