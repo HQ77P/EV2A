@@ -113,11 +113,20 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
   <em>点击图片跳转至 YouTube 观看完整演示</em>
 </p>
 
+###  Raw event stream data in XTT space
+
+<!-- 方法1: 使用 GIF 动图（推荐用于短片段） -->
+<p align="center">
+  <img src="assets/videos/Eventstream.gif" width="400">
+  <br>
+  <em>Fig4: An example of event frames data (Audio induced vibrating object) </em>
+</p>
+
 ### Event frames after pre-processing
 
 <!-- 方法1: 使用 GIF 动图（推荐用于短片段） -->
 <p align="center">
-  <img src="assets/videos/Eventframes.gif" width="600">
+  <img src="assets/videos/Eventframes.gif" width="360">
   <br>
   <em>Fig4: An example of event frames data (Audio induced vibrating object) </em>
 </p>
