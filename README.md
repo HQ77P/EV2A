@@ -111,8 +111,8 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 
 | Method | Audio |
 |:-----|:-----|
-| Ground Truth | [▶️ play](assets/audio/p262_006_mic1_hr.wav) |
-| **EV2A (ours)** | [▶️ play](assets/audio/p262_006_mic1_pr.wav) |
+| Ground Truth | [▶️ play](assets/audio/p262_066_mic1_hr.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/p262_066_mic1_pr.wav) |
 
 ### Sample 3: Female Speaker p376
 
