@@ -55,12 +55,12 @@ Visual microphones are designed to recover audio information from visual data ac
     <td><img src="assets/images/p262_066_EV2A.png" width="280"></td>
   </tr>
   <tr>
-    <td><img src="assets/images/p376_100_GT.png" width="280"></td>
-    <td><img src="assets/images/p376_100_EV2A.png" width="280"></td>
+    <td><img src="assets/images/p376_100_mic1_GT.png" width="280"></td>
+    <td><img src="assets/images/p376_100_mic1_EV2A.png" width="280"></td>
   <tr>
     <tr>
-    <td><img src="assets/images/s5_246_GT.png" width="280"></td>
-    <td><img src="assets/images/s5_246_EV2A.png" width="280"></td>
+    <td><img src="assets/images/s5_246_mic1_GT.png" width="280"></td>
+    <td><img src="assets/images/s5_246_mic1_EV2A.png" width="280"></td>
   <tr>
 </table>
 
