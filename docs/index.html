@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,6 @@
             --surface: #1e293b;
             --surface-2: #334155;
             --accent: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.25);
             --text: #f1f5f9;
             --text-muted: #94a3b8;
             --border: #475569;
@@ -28,27 +27,25 @@
             min-height: 100vh;
         }
 
-        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
 
+        /* ---- Header ---- */
         header {
             text-align: center;
             padding: 3rem 0 2rem;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
-
         header h1 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.4rem; font-weight: 700;
             background: linear-gradient(135deg, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
         }
-
-        header p { color: var(--text-muted); font-size: 1.05rem; }
-
-        .links { margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        header .subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin: 0 auto; }
+        header .authors { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem; font-style: italic; }
+        .links { margin-top: 1.2rem; display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
         .links a {
             display: inline-flex; align-items: center; gap: 0.4rem;
             padding: 0.5rem 1rem; border-radius: 8px;
@@ -58,49 +55,67 @@
         }
         .links a:hover { background: var(--surface-2); border-color: var(--accent); }
 
-        /* ----- Sample Card ----- */
+        /* ---- Section ---- */
+        .section { margin-bottom: 3rem; }
+        .section h2 {
+            font-size: 1.5rem; margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+        /* ---- Metrics Table ---- */
+        .metrics-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .metrics-table th, .metrics-table td {
+            padding: 0.6rem 1rem; text-align: center;
+            border: 1px solid var(--border); font-size: 0.9rem;
+        }
+        .metrics-table th { background: var(--surface-2); font-weight: 600; }
+        .metrics-table td:first-child { text-align: left; font-weight: 500; }
+        .metrics-table tr.ours { background: rgba(59, 130, 246, 0.1); font-weight: 600; }
+
+        /* ---- Sample Card ---- */
         .sample-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
-
         .sample-header {
             display: flex; justify-content: space-between; align-items: center;
             margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;
         }
-        .sample-header h3 { font-size: 1.15rem; }
-
+        .sample-header h3 { font-size: 1.1rem; }
         .tag {
             display: inline-block; padding: 0.2rem 0.7rem; border-radius: 20px;
             font-size: 0.78rem; font-weight: 600;
         }
-        .tag-snr { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
-        .tag-gender { background: rgba(59, 130, 246, 0.15); color: var(--accent); }
+        .tag-female { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+        .tag-male { background: rgba(59, 130, 246, 0.15); color: var(--accent); }
 
-        /* ----- Spectrogram row ----- */
-        .spec-row {
+        /* ---- Spectrogram / Waveform Grid ---- */
+        .comparison-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
-        .spec-item { text-align: center; }
-        .spec-item img {
+        .comparison-item { text-align: center; }
+        .comparison-item img {
             width: 100%; border-radius: 8px;
             border: 1px solid var(--border);
         }
-        .spec-item .caption {
-            font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem;
+        .comparison-item .caption {
+            font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;
         }
 
-        /* ----- Audio row ----- */
+        /* ---- Audio Row ---- */
         .audio-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
+            margin-top: 1rem;
         }
         .audio-item {
             background: var(--surface-2); border-radius: 8px; padding: 1rem;
@@ -113,175 +128,278 @@
         .audio-item .label.ours { color: var(--success); }
         .audio-item audio { width: 100%; height: 40px; }
 
-        /* ----- Video section ----- */
-        .video-section { margin: 3rem 0; }
-        .video-section h2 { font-size: 1.4rem; margin-bottom: 1rem; }
-        .video-wrapper {
-            position: relative; width: 100%;
-            padding-bottom: 56.25%; /* 16:9 */
-            border-radius: 12px; overflow: hidden;
-            background: #000;
+        /* ---- GIF / Video ---- */
+        .gif-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
-        .video-wrapper iframe,
-        .video-wrapper video {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
+        .gif-item { text-align: center; }
+        .gif-item img {
+            max-width: 100%; border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .gif-item .caption {
+            font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;
         }
 
+        /* ---- Footer ---- */
         footer {
             text-align: center; padding: 2rem 0;
             border-top: 1px solid var(--border);
-            margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem;
+            margin-top: 2rem; color: var(--text-muted); font-size: 0.85rem;
         }
+        footer a { color: var(--accent); }
 
         @media (max-width: 600px) {
-            .spec-row { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
             .audio-row { grid-template-columns: 1fr; }
+            .gif-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- ====== Header ====== -->
+    <!-- ==================== Header ==================== -->
     <header>
-        <h1>SpecEnhance</h1>
-        <p>Joint Time-Frequency Modeling for Speech Enhancement</p>
+        <h1>EV2A</h1>
+        <p class="subtitle">Event Vibration to Audio: A Deep Learning-Based Speech Recovery Method Using Event Camera</p>
+        <p class="authors">Haoqi Liu, Mehrdad Yaghoobi<br>
+            Institute for Imaging, Data and Communications, School of Engineering, University of Edinburgh</p>
         <div class="links">
-            <a href="https://arxiv.org/abs/2026.xxxxx">📄 Paper</a>
-            <a href="https://github.com/your-username/your-repo-name">💻 Code</a>
-            <a href="https://huggingface.co/your-username/specenhance">🤗 Model</a>
+            <a href="https://github.com/your-username/EV2A">💻 Code</a>
         </div>
     </header>
 
-    <!-- ====== Sample 1 ====== -->
-    <div class="sample-card">
-        <div class="sample-header">
-            <h3>Sample 1</h3>
-            <div>
-                <span class="tag tag-gender">Female</span>
+    <!-- ==================== Metrics ==================== -->
+    <div class="section">
+        <h2>📊 Evaluation Metrics</h2>
+        <table class="metrics-table">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>PESQ ⬆</th>
+                    <th>STOI ⬆</th>
+                    <th>LSD ⬇</th>
+                    <th>WER ⬇</th>
+                    <th>CER ⬇</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VM</td><td>1.21</td><td>0.55</td><td>3.67</td><td>0.83</td><td>0.52</td>
+                </tr>
+                <tr>
+                    <td>EBVM</td><td>1.20</td><td>0.40</td><td>5.60</td><td>0.98</td><td>0.85</td>
+                </tr>
+                <tr class="ours">
+                    <td>EV2A (Ours)</td><td>1.82</td><td>0.80</td><td>1.03</td><td>0.34</td><td>0.17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ==================== Spectrogram & Audio Samples ==================== -->
+    <div class="section">
+        <h2>🎧 Audio Samples &amp; Spectrogram Comparison</h2>
+        <p class="section-desc">Comparison between ground truth and recovered speech from event vibration recordings.</p>
+
+        <!-- ---- Sample 1: p234 ---- -->
+        <div class="sample-card">
+            <div class="sample-header">
+                <h3>Sample 1 — Speaker p234</h3>
+                <span class="tag tag-female">Female</span>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p234_196_mic1_GT_spec.png" alt="GT spectrogram">
+                    <div class="caption">Ground Truth Spectrogram</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p234_196_mic1_EV2A_spec2.png" alt="EV2A spectrogram">
+                    <div class="caption">EV2A Recovered Spectrogram</div>
+                </div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p234_196_mic1_GT.png" alt="GT waveform">
+                    <div class="caption">Ground Truth Waveform</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p234_196_mic1_EV2A.png" alt="EV2A waveform">
+                    <div class="caption">EV2A Recovered Waveform</div>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-item">
+                    <div class="label">Ground Truth</div>
+                    <audio controls preload="none">
+                        <source src="audio/p234_196_mic1.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="audio-item">
+                    <div class="label ours">EV2A (Ours)</div>
+                    <audio controls preload="none">
+                        <source src="audio/p234_196_mic1_EV2A_2.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="audio-item">
+                    <div class="label">VM</div>
+                    <audio controls preload="none">
+                        <source src="audio/p234_196_mic1_VM.wav" type="audio/wav">
+                    </audio>
+                </div>
             </div>
         </div>
 
-        <!-- Spectrogram Comparison -->
-        <div class="spec-row">
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_noisy.png" alt="Ground Truth spectrogram">
-                <div class="caption">Noisy Input</div>
+        <!-- ---- Sample 2: p262 ---- -->
+        <div class="sample-card">
+            <div class="sample-header">
+                <h3>Sample 2 — Speaker p262</h3>
+                <span class="tag tag-female">Female</span>
             </div>
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_enhanced.png" alt="Recoverd spectrogram (EV2A)">
-                <div class="caption">SpecEnhance (Ours)</div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p262_066_GT.png" alt="GT spectrogram">
+                    <div class="caption">Ground Truth Spectrogram</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p262_066_EV2A.png" alt="EV2A spectrogram">
+                    <div class="caption">EV2A Recovered Spectrogram</div>
+                </div>
             </div>
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_clean.png" alt="Clean spectrogram">
-                <div class="caption">Clean Reference</div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p262_066_GT.svg" alt="GT waveform">
+                    <div class="caption">Ground Truth Waveform</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p262_066_EV2A.svg" alt="EV2A waveform">
+                    <div class="caption">EV2A Recovered Waveform</div>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-item">
+                    <div class="label">Ground Truth</div>
+                    <audio controls preload="none">
+                        <source src="audio/p262_066_mic1_hr.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="audio-item">
+                    <div class="label ours">EV2A (Ours)</div>
+                    <audio controls preload="none">
+                        <source src="audio/p262_066_mic1_pr.wav" type="audio/wav">
+                    </audio>
+                </div>
             </div>
         </div>
 
-        <!-- Audio Player -->
-        <div class="audio-row">
-            <div class="audio-item">
-                <div class="label">Ground Truth</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/p234_196_mic1.wav" type="audio/wav">
-                </audio>
+        <!-- ---- Sample 3: p376 ---- -->
+        <div class="sample-card">
+            <div class="sample-header">
+                <h3>Sample 3 — Speaker p376</h3>
+                <span class="tag tag-female">Female</span>
             </div>
-            <div class="audio-item">
-                <div class="label">EV2A (ours)</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/p234_196_mic1_EV2A_2.wav" type="audio/wav">
-                </audio>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p376_100_mic1_GT.png" alt="GT spectrogram">
+                    <div class="caption">Ground Truth Spectrogram</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p376_100_mic1_EV2A.png" alt="EV2A spectrogram">
+                    <div class="caption">EV2A Recovered Spectrogram</div>
+                </div>
             </div>
-            <div class="audio-item">
-                <div class="label ours">VM</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/p234_196_mic1_VM.wav" type="audio/wav">
-                </audio>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/p376_100_mic1_GT.svg" alt="GT waveform">
+                    <div class="caption">Ground Truth Waveform</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/p376_100_mic1_EV2A.svg" alt="EV2A waveform">
+                    <div class="caption">EV2A Recovered Waveform</div>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-item">
+                    <div class="label">Ground Truth</div>
+                    <audio controls preload="none">
+                        <source src="audio/p376_100_mic1_hr.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="audio-item">
+                    <div class="label ours">EV2A (Ours)</div>
+                    <audio controls preload="none">
+                        <source src="audio/p376_100_mic1_pr.wav" type="audio/wav">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---- Sample 4: s5 ---- -->
+        <div class="sample-card">
+            <div class="sample-header">
+                <h3>Sample 4 — Speaker s5</h3>
+                <span class="tag tag-male">Male</span>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/s5_246_mic1_GT.png" alt="GT spectrogram">
+                    <div class="caption">Ground Truth Spectrogram</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/s5_246_mic1_EV2A.png" alt="EV2A spectrogram">
+                    <div class="caption">EV2A Recovered Spectrogram</div>
+                </div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-item">
+                    <img src="images/s5_246_mic1_GT.svg" alt="GT waveform">
+                    <div class="caption">Ground Truth Waveform</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="images/s5_246_mic1_EV2A.svg" alt="EV2A waveform">
+                    <div class="caption">EV2A Recovered Waveform</div>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-item">
+                    <div class="label">Ground Truth</div>
+                    <audio controls preload="none">
+                        <source src="audio/s5_246_mic1_hr.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="audio-item">
+                    <div class="label ours">EV2A (Ours)</div>
+                    <audio controls preload="none">
+                        <source src="audio/s5_246_mic1_pr.wav" type="audio/wav">
+                    </audio>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ====== Sample 2 ====== -->
-    <div class="sample-card">
-        <div class="sample-header">
-            <h3>Sample 2</h3>
-            <div>
-                <span class="tag tag-gender">Male</span>
-                <span class="tag tag-snr">SNR 0 dB</span>
+    <!-- ==================== Vibration Recording ==================== -->
+    <div class="section">
+        <h2>🎬 Vibration Recording Samples</h2>
+        <div class="gif-row">
+            <div class="gif-item">
+                <img src="videos/Eventstream.gif" alt="Event stream">
+                <div class="caption">Fig 4: Raw event data in XYT space<br>(Audio induced vibrating object)</div>
             </div>
-        </div>
-
-        <div class="spec-row">
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_noisy_002.png" alt="Noisy">
-                <div class="caption">Noisy Input</div>
-            </div>
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_enhanced_002.png" alt="Enhanced">
-                <div class="caption">SpecEnhance (Ours)</div>
-            </div>
-            <div class="spec-item">
-                <img src="../assets/images/spectrogram_clean_002.png" alt="Clean">
-                <div class="caption">Clean Reference</div>
-            </div>
-        </div>
-
-        <div class="audio-row">
-            <div class="audio-item">
-                <div class="label">Noisy</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/sample_002_noisy.wav" type="audio/wav">
-                </audio>
-            </div>
-            <div class="audio-item">
-                <div class="label">DCCRN</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/sample_002_dccrn.wav" type="audio/wav">
-                </audio>
-            </div>
-            <div class="audio-item">
-                <div class="label ours">Ours</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/sample_002_enhanced.wav" type="audio/wav">
-                </audio>
-            </div>
-            <div class="audio-item">
-                <div class="label">Clean</div>
-                <audio controls preload="none">
-                    <source src="../assets/audio/sample_002_clean.wav" type="audio/wav">
-                </audio>
+            <div class="gif-item">
+                <img src="videos/Eventframes.gif" alt="Event frames">
+                <div class="caption">Fig 5: Event frames after pre-processing<br>(Audio induced vibrating object)</div>
             </div>
         </div>
     </div>
 
-    <!-- ====== Video ====== -->
-    <div class="video-section">
-        <h2>🎬 Demo Video</h2>
-        <!-- 方式A: 嵌入 YouTube -->
-        <div class="video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/your_video_id"
-                title="Demo Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- 方式B: 自托管视频（取消注释即可使用）
-        <div class="video-wrapper">
-            <video controls preload="metadata" poster="../assets/images/video_thumbnail.png">
-                <source src="../assets/videos/demo.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
-        </div>
-        -->
-    </div>
-
+    <!-- ==================== Footer ==================== -->
     <footer>
-        SpecEnhance &copy; 2026 &middot;
-        <a href="https://github.com/your-username/your-repo-name" style="color:var(--accent);">GitHub</a>
+        EV2A &copy; 2026 &middot; University of Edinburgh &middot;
+        <a href="https://github.com/your-username/EV2A">GitHub</a>
     </footer>
 
 </div>
