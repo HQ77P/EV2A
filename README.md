@@ -99,7 +99,7 @@ Visual microphones are designed to recover audio information from visual data ac
 
 We provide more audio samples in [Demo webpage](https://your-username.github.io/your-repo-name/)。
 
-### Sample 1: Female Speaker
+### Sample 1: Female Speaker p234
 
 | Method | Audio |
 |:-----|:-----|
@@ -107,13 +107,26 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 | **EV2A (ours)** | [▶️ play](assets/audio/p234_196_mic1_EV2A_2.wav) |
 | VM | [▶️ play](assets/audio/p234_196_mic1_VM.wav) |
 
-### Sample 2: Male Speaker
+### Sample 2: Female Speaker p262
 
 | Method | Audio |
 |:-----|:-----|
-| Ground Truth | [▶️ play](assets/audio/sample_002_noisy.wav) |
-| **EV2A (ours)** | [▶️ play](assets/audio/sample_002_enhanced.wav) |
-| VM | [▶️ play](assets/audio/sample_002_clean.wav) |
+| Ground Truth | [▶️ play](assets/audio/p262_006_mic1_hr.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/p262_006_mic1_pr.wav) |
+
+### Sample 3: Female Speaker p376
+
+| Method | Audio |
+|:-----|:-----|
+| Ground Truth | [▶️ play](assets/audio/p376_100_mic1_hr.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/p376_100_mic1_pr.wav) |
+
+### Sample 4: Male Speaker s5
+
+| Method | Audio |
+|:-----|:-----|
+| Ground Truth | [▶️ play](assets/audio/s5_246_mic1_hr.wav) |
+| **EV2A (ours)** | [▶️ play](assets/audio/s5_246_mic1_pr.wav) |
 
 > ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [ Demo webpage](https://your-username.github.io/your-repo-name/).
 
@@ -121,15 +134,7 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 
 ## 🎬 Vibration Recording Sample
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=your_video_id">
-    <img src="assets/images/video_thumbnail.png" width="600" alt="演示视频">
-  </a>
-  <br>
-  <em>点击图片跳转至 YouTube 观看完整演示</em>
-</p>
-
-###  Raw event stream data in XTT space
+###  Raw event stream data in XYT space
 
 <!-- 方法1: 使用 GIF 动图（推荐用于短片段） -->
 <p align="center">
@@ -146,12 +151,6 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
   <br>
   <em>Fig5: An example of event frames data (Audio induced vibrating object) </em>
 </p>
-
-<!-- 方法2: 使用 GitHub 原生视频支持（推荐用于较长视频） -->
-
-https://github.com/user-attachments/assets/your-video-hash-here
-
-<p align="center"><em>视频1: 完整的实时语音增强演示</em></p>
 
 ---
 
