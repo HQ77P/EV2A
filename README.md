@@ -76,10 +76,18 @@ Visual microphones are designed to recover audio information from visual data ac
   <tr>
     <td><img src="assets/images/p234_196_mic1_GT.png" width="280"></td>
     <td><img src="assets/images/p234_196_mic1_EV2A.png" width="280"></td>
-  <tr>
-    <td><img src="assets/images/waveform_noisy.png" width="280"></td>
-    <td><img src="assets/images/waveform_enhanced.png" width="280"></td>
+   <tr>
+    <td><img src="assets/images/p262_066_GT.svg" width="280"></td>
+    <td><img src="assets/images/p262_066_EV2A.svg" width="280"></td>
   </tr>
+  <tr>
+    <td><img src="assets/images/p376_100_mic1_GT.svg" width="280"></td>
+    <td><img src="assets/images/p376_100_mic1_EV2A.svg" width="280"></td>
+  <tr>
+    <tr>
+    <td><img src="assets/images/s5_246_mic1_GT.svg" width="280"></td>
+    <td><img src="assets/images/s5_246_mic1_EV2A.svg" width="280"></td>
+  <tr>
 </table>
 
 <p align="center"><em>Fig3: Comparison of waveform between ground truth and recovered speech from event vibration recordings</em></p>
