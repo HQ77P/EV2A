@@ -97,7 +97,7 @@ Visual microphones are designed to recover audio information from visual data ac
 
 ## 🎧 Audio Samples
 
-We provide more audio samples in [Demo webpage](https://your-username.github.io/your-repo-name/)。
+We provide more audio samples in [Demo webpage](https://HQ77P.github.io/EV2A/)。
 
 ### Sample 1: Female Speaker p234
 
@@ -128,7 +128,7 @@ We provide more audio samples in [Demo webpage](https://your-username.github.io/
 | Ground Truth | [▶️ play](assets/audio/s5_246_mic1_hr.wav) |
 | **EV2A (ours)** | [▶️ play](assets/audio/s5_246_mic1_pr.wav) |
 
-> ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [ Demo webpage](https://your-username.github.io/your-repo-name/).
+> ⚠️ **Notice**: GitHub doesn't support to direcly play the `.wav` file. Please download and play, or visit our webpage for listening: [ Demo webpage](https://HQ77P.github.io/EV2A/).
 
 ---
 
